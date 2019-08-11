@@ -22,3 +22,7 @@
 	path = sherlock
 	url = https://github.com/sherlock-project/sherlock
 	branch = master
+[submodule "AutoRecon"]
+	path = AutoRecon
+	url = https://github.com/Tib3rius/AutoRecon
+	branch = master
