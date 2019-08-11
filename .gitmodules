@@ -26,10 +26,6 @@
 	path = AutoRecon
 	url = https://github.com/Tib3rius/AutoRecon
 	branch = master
-[submodule "Windows PHP Reverse Shell"]
-	path = Windows PHP Reverse Shell
-	url = https://github.com/Dhayalanb/windows-php-reverse-shell
-	branch = master
 [submodule "OSCPExamTemplate"]
 	path = OSCPExamTemplate
 	url = https://github.com/whoisflynn/OSCP-Exam-Report-Template
