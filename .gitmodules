@@ -30,3 +30,7 @@
 	path = OSCPExamTemplate
 	url = https://github.com/whoisflynn/OSCP-Exam-Report-Template
 	branch = master
+[submodule "WindowsPHPReverseShell"]
+	path = WindowsPHPReverseShell
+	url = https://github.com/Dhayalanb/windows-php-reverse-shell
+	branch = master
