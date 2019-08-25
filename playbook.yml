@@ -30,6 +30,8 @@
 
   - include_tasks: tasks/install_LinEnum.yml
 
+  - include_tasks: tasks/install_PowerSploit.yml
+
   - include_tasks: tasks/install_one-lin3r.yml
 
   - include_tasks: tasks/install_SecLists.yml
