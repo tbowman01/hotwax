@@ -14,9 +14,11 @@
     name: 
     - pip
     virtualenv: "{{python_virtualenvs.0.path}}"
+    state: latest
 
 - name: Install Python 3 virtualenv packages
   pip: 
     name: 
     - pip
     virtualenv: "{{python_virtualenvs.1.path}}"
+    state: latest
