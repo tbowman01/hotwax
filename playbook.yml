@@ -25,3 +25,5 @@
 
   - include_tasks: tasks/ssh_keys.yml
     when: configure_keys
+
+  - include_tasks: tasks/add_aliases.yml

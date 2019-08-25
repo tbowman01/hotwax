@@ -3,6 +3,9 @@ downloads: /root/.ansible-downloads/
 
 username: "brash"
 
+bash_aliases:
+  - { alias: 'la', command: 'ls -al' }
+
 configure_bootstrap: yes
 configure_dotfiles: yes
 configure_virtualenv: yes
