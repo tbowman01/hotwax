@@ -1,0 +1,21 @@
+---
+# https://github.com/DominicBreuker/pspy
+- name: Create pspy directory
+  file:
+    path: "/opt/hw/pspy"
+    state: directory
+    mode: "755"
+    owner: "root"
+
+- name: Copy pspy binaries from repository
+  get_url:
+    url: "{{ 'https://github.com/DominicBreuker/pspy/releases/download/v1.2.0/' + item}}"
+    dest: "{{ '/opt/hw/pspy/' + item}}"
+    force: yes
+    mode: "777"
+    owner: "root"
+  loop:
+  - pspy32
+  - pspy32s
+  - pspy64
+  - pspy64s

@@ -38,4 +38,6 @@
 
   - include_tasks: tasks/install_sherlock.yml
 
+  - include_tasks: tasks/install_pspy.yml
+
   - include_tasks: tasks/add_aliases.yml
