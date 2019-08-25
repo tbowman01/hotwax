@@ -1,4 +1,5 @@
-![image](https://user-images.githubusercontent.com/8198523/62826983-af786380-bb93-11e9-85a6-c938284e1057.png)
+![image](https://travis-ci.com/BrashEndeavours/hotwax.svg?branch=master)
+
 # HOTWAX
 
 Hotwax is a script to provision a set of extra pentesting tools onto a Kali Linux machine in a consistent manner.
@@ -9,10 +10,11 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Git.
+Git
+Ansible
 
 ```
-apt install -y git
+apt install -y git ansible
 ```
 
 ### Installing
@@ -21,14 +23,14 @@ Clone the HOTWAX repository, including submodules.
 
 ```
 cd ~
-git clone --recurse-submodules https://github.com/BrashEndeavours/hotwax 
+git clone https://github.com/BrashEndeavours/hotwax
 ```
 
-Run the installer
+Run the playbook
 
 ```
 cd hotwax
-./install.sh
+ansible-playbook playbook.yml
 ```
 
 ## Tools installed:
