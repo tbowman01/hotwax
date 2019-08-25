@@ -1,0 +1,20 @@
+- name: Copy id_rsa key
+  copy: 
+    content: "{{ id_rsa }}"
+    dest: "~/.ssh/id_rsa"
+    mode: "400"
+    owner: "root"
+
+- name: Copy id_rsa.pub key
+  copy: 
+    src: "files/id_rsa.pub"
+    dest: "~/.ssh/id_rsa.pub"
+    mode: "444"
+    owner: "root"
+
+- name: Copy authorized_keys
+  copy: 
+    src: "files/authorized_keys"
+    dest: "~/.ssh/authorized_keys"
+    mode: "444"
+    owner: "root"

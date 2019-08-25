@@ -1,35 +1,28 @@
 ---
-# pip install -U pip, ansible
-# ansible-galaxy install --role-file requirements.yml --roles-path roles
-- hosts: localhost
+- name: Converge
+  hosts: localhost
+  become: yes
+  gather_facts: no
 
-  vars:
+  vars_files:
+    - default.config.yml
+    - secrets/ssh_keys.yml
 
-  roles:
-    - role: geerlingguy.dotfiles
-      become: false
-      dotfiles_repo: "https://github.com/BrashEndeavours/dotfiles"
-      dotfiles_files:
-        - .bashrc
-        - .gitconfig
-        - .vimrc
+  pre_tasks:
+    - include_vars: "{{ item }}"
+      with_fileglob:
+        - "{{ playbook_dir }}/config.yml"
+      tags: ['always']
 
-    - role: cdriehuys.virtualenv
-      # Path to virtualenv
-      venv: /opt/virtualenvs/venv3
-      # List of packages required to create virtualenv
-      venv_packages: [python3]
-      # Version of python to create the virtualenv with
-      venv_python: python3
-      venv_owner: root
-      venv_group: root
+  tasks:
+  - include_tasks: tasks/bootstrap.yml
+    when: configure_bootstrap
+        
+  - include_tasks: tasks/dotfiles.yml
+    when: configure_dotfiles
 
-    - role: cdriehuys.virtualenv
-      # Path to virtualenv
-      venv: /opt/virtualenvs/venv2
-      # List of packages required to create the virtualenv
-      venv_packages: [python2]
-      # Version of python to create the virtualenv with
-      venv_python: python3
-      venv_owner: root
-      venv_group: root
+  - include_tasks: tasks/python_virtualenv.yml
+    when: configure_virtualenv
+
+  - include_tasks: tasks/ssh_keys.yml
+    when: configure_keys

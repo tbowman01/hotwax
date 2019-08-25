@@ -1,0 +1,13 @@
+---
+  - name: Get robertdebock.bootstrap
+    command: ansible-galaxy install robertdebock.bootstrap
+    register: robertdebock
+    changed_when: "'is already installed' not in robertdebock.stderr"
+    failed_when: "'ERROR' in robertdebock.stderr"
+
+  - name: Include robertdebock.bootstrap
+    include_role:
+      name: robertdebock.bootstrap
+    vars:
+      bootstrap_user: root
+      bootstrap_preview: no

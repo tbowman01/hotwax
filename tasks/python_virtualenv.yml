@@ -1,0 +1,22 @@
+---
+- name: Get Stouts.python
+  command: ansible-galaxy install Stouts.python
+  register: stouts
+  changed_when: "'is already installed' not in stouts.stderr"
+  failed_when: "'ERROR' in stouts.stderr"
+
+- name: Include Stouts.python
+  include_role:
+    name: Stouts.python
+
+- name: Install Python 2 virtualenv packages
+  pip: 
+    name: 
+    - pip
+    virtualenv: "{{python_virtualenvs.0.path}}"
+
+- name: Install Python 3 virtualenv packages
+  pip: 
+    name: 
+    - pip
+    virtualenv: "{{python_virtualenvs.1.path}}"
