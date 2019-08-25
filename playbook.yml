@@ -26,4 +26,16 @@
   - include_tasks: tasks/ssh_keys.yml
     when: configure_keys
 
+  - include_tasks: tasks/install_git.yml
+
+  - include_tasks: tasks/install_LinEnum.yml
+
+  - include_tasks: tasks/install_one-lin3r.yml
+
+  - include_tasks: tasks/install_SecLists.yml
+
+  - include_tasks: tasks/install_nishang.yml
+
+  - include_tasks: tasks/install_sherlock.yml
+
   - include_tasks: tasks/add_aliases.yml

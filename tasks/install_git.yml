@@ -1,0 +1,14 @@
+---
+- name: Ensure git is installed (Kali).
+  apt:
+    name: "git"
+    state: present
+
+# - name: Set git aliases
+#   set_fact:
+#     git_aliases: 
+#     - { alias: 'gc', command: 'git clone' }
+
+# - name: Merge git aliases
+#   set_fact:
+#     bash_aliases: "{{ bash_aliases + git_aliases }}"

@@ -1,0 +1,9 @@
+---
+# https://github.com/D4Vinci/One-Lin3r
+- name: Install one-lin3r
+  pip: 
+    name: 
+    - one-lin3r
+    executable: pip3
+    #virtualenv: "{{python_virtualenvs.1.path}}"
+    state: latest
