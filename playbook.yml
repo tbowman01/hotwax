@@ -16,13 +16,6 @@
 
   tasks:
   - include_tasks: tasks/user.yml
-    #when: configure_user
-
-  - name: test
-    command: "echo {{ homefolder | default('DEFAULT') }}"
-
-  - include_tasks: tasks/bootstrap.yml
-    when: configure_bootstrap
         
   - include_tasks: tasks/dotfiles.yml
     when: configure_dotfiles

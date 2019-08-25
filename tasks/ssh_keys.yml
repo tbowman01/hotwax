@@ -1,18 +1,25 @@
-- name: Copy id_rsa key
+---
+- name: Create ~/.ssh directory
+  file:
+    path: /root/.ssh/
+    state: directory
+    owner: "root"
+
+- name: Copy id_rsa to ~/.ssh directory
   copy: 
     content: "{{ id_rsa }}"
     dest: "/root/.ssh/id_rsa"
     mode: "400"
     owner: "root"
 
-- name: Copy id_rsa.pub key
+- name: Copy id_rsa.pub key to ~/.ssh directory
   copy: 
     src: "files/id_rsa.pub"
     dest: "/root/.ssh/id_rsa.pub"
     mode: "444"
     owner: "root"
 
-- name: Copy authorized_keys
+- name: Copy authorized_keys to ~/.ssh directory
   copy: 
     src: "files/authorized_keys"
     dest: "/root/.ssh/authorized_keys"
