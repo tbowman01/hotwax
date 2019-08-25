@@ -1,5 +1,7 @@
 ---
-downloads: ~/.ansible-downloads/
+downloads: /root/.ansible-downloads/
+
+username: "brash"
 
 configure_bootstrap: yes
 configure_dotfiles: yes
@@ -8,7 +10,7 @@ configure_keys: yes
 
 dotfiles_repo: https://github.com/BrashEndeavours/dotfiles
 dotfiles_repo_accept_hostkey: yes
-dotfiles_repo_local_destination: ~/Documents/dotfiles
+dotfiles_repo_local_destination: /root/Documents/dotfiles
 dotfiles_files:
   - .bashrc
   - .gitconfig
@@ -16,7 +18,7 @@ dotfiles_files:
 
 python_versions: [2.7, 3.7]
 python_virtualenvs: 
-- path: ~/venv/py2
+- path: /root/venv/py2
   python: python2.7
-- path: ~/venv/py3
+- path: /root/venv/py3
   python: python3.7
