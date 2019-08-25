@@ -8,6 +8,7 @@
 - name: Include igor_mukhin.bash_aliases
   include_role:
     name: igor_mukhin.bash_aliases
+  bash_aliases_path: "{{ homefolder + '.bash_aliases' }}"
 
 
 

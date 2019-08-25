@@ -1,7 +1,7 @@
 ---
 downloads: /root/.ansible-downloads/
 
-username: "brash"
+username: "root"
 
 bash_aliases:
   - { alias: 'la', command: 'ls -al' }
