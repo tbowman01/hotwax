@@ -3,8 +3,7 @@ downloads: /root/.ansible-downloads/
 
 username: "root"
 
-bash_aliases:
-  - { alias: 'la', command: 'ls -al' }
+bash_aliases: []
 
 configure_bootstrap: yes
 configure_dotfiles: yes
