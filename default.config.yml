@@ -8,7 +8,7 @@ bash_aliases: []
 configure_bootstrap: yes
 configure_dotfiles: yes
 configure_virtualenv: yes
-configure_keys: yes
+configure_keys: no
 
 dotfiles_repo: https://github.com/BrashEndeavours/dotfiles
 dotfiles_repo_accept_hostkey: yes
