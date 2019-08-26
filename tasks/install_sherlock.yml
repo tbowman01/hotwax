@@ -9,12 +9,12 @@
 - name: Install sherlock
   pip: 
     executable: pip3
-    requirements: /opt/hw/sherlock/requirements.txt
+    requirements: /opt/sherlock/requirements.txt
 
 - name: Set sherlock aliases
   set_fact:
     sherlock_aliases: 
-    - { alias: 'sherlock', command: 'python3 /opt/hw/sherlock/sherlock.py' }
+    - { alias: 'sherlock', command: 'python3 /opt/sherlock/sherlock.py' }
 
 - name: Merge sherlock aliases
   set_fact:
