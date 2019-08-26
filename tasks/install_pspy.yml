@@ -2,7 +2,7 @@
 # https://github.com/DominicBreuker/pspy
 - name: Create pspy directory
   file:
-    path: "/opt/hw/pspy"
+    path: "/opt/pspy"
     state: directory
     mode: "755"
     owner: "root"
