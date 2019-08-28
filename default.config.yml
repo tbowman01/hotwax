@@ -8,7 +8,7 @@ bash_aliases: []
 configure_bootstrap: yes
 configure_dotfiles: yes
 configure_virtualenv: yes
-configure_keys: no
+configure_keys: yes
 
 dotfiles_repo: https://github.com/BrashEndeavours/dotfiles
 dotfiles_repo_accept_hostkey: yes
@@ -17,6 +17,7 @@ dotfiles_files:
   - .bashrc
   - .gitconfig
   - .vimrc
+  - .config/cherrytree/config.cfg
 
 python_versions: [2.7, 3.7]
 python_virtualenvs: 
