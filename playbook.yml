@@ -28,6 +28,10 @@
 
   - include_tasks: tasks/install_git.yml
 
+  - include_tasks: tasks/install_gobuster.yml
+
+  - include_tasks: tasks/install_sshuttle.yml
+
   - include_tasks: tasks/install_OSCP_report_templates.yml
 
   - include_tasks: tasks/install_LinEnum.yml

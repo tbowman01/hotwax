@@ -1,0 +1,14 @@
+---
+- name: Ensure gobuster is installed (Kali).
+  apt:
+    name: "gobuster"
+    state: present
+
+# - name: Set gobuster aliases
+#   set_fact:
+#     gobuster_aliases: 
+#     - { alias: '', command: '' }
+
+# - name: Merge gobuster aliases
+#   set_fact:
+#     bash_aliases: "{{ bash_aliases + gobuster_aliases }}"

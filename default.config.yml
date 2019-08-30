@@ -18,6 +18,7 @@ dotfiles_files:
   - .gitconfig
   - .vimrc
   - .config/cherrytree/config.cfg
+  - .tmux.conf
 
 python_versions: [2.7, 3.7]
 python_virtualenvs: 
