@@ -30,6 +30,8 @@
 
   - include_tasks: tasks/install_gobuster.yml
 
+  - include_tasks: tasks/install_AutoRecon.yml
+
   - include_tasks: tasks/install_sshuttle.yml
 
   - include_tasks: tasks/install_chisel.yml

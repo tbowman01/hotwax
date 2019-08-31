@@ -1,0 +1,21 @@
+---
+# https://github.com/Tib3rius/AutoRecon
+- name: Copy AutoRecon from repository
+  git:
+    repo: "https://github.com/Tib3rius/AutoRecon.git"
+    dest: /opt/autorecon
+    update: yes
+
+- name: Install autorecon
+  pip: 
+    executable: pip3
+    requirements: /opt/autorecon/requirements.txt
+
+- name: Set autorecon aliases
+  set_fact:
+    autorecon_aliases: 
+    - { alias: 'autorecon', command: 'python3 /opt/autorecon/autorecon.py' }
+
+- name: Merge autorecon aliases
+  set_fact:
+    bash_aliases: "{{ bash_aliases + autorecon_aliases }}"
