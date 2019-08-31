@@ -32,6 +32,8 @@
 
   - include_tasks: tasks/install_sshuttle.yml
 
+  - include_tasks: tasks/install_chisel.yml
+
   - include_tasks: tasks/install_OSCP_report_templates.yml
 
   - include_tasks: tasks/install_LinEnum.yml

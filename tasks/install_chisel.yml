@@ -1,0 +1,35 @@
+---
+# https://github.com/jpillora/chisel
+- name: Create chisel directory
+  file:
+    path: "/opt/chisel"
+    state: directory
+    mode: "755"
+    owner: "root"
+
+- name: Download chisel binaries from repository
+  get_url:
+    url: "{{'https://github.com/jpillora/chisel/releases/download/' + chisel_version + '/' + item + '.gz'}}"
+    validate_certs: no
+    dest: "/opt/chisel/"
+    mode: "555"
+    owner: "root"
+  loop:
+  - chisel_darwin_386
+  - chisel_darwin_amd64
+  - chisel_linux_386
+  - chisel_linux_amd64
+  - chisel_linux_arm
+  - chisel_windows_386.exe
+  - chisel_windows_amd64.exe
+
+- name: Unzip chisel binaries on host
+  command: "{{'gunzip /opt/chisel/' + item + '.gz'}}"
+  loop:
+  - chisel_darwin_386
+  - chisel_darwin_amd64
+  - chisel_linux_386
+  - chisel_linux_amd64
+  - chisel_linux_arm
+  - chisel_windows_386.exe
+  - chisel_windows_amd64.exe
