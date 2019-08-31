@@ -23,6 +23,17 @@
   - chisel_windows_386.exe
   - chisel_windows_amd64.exe
 
+- name: Remove previous chisel binaries
+  command: "{{'rm /opt/chisel/' + item}}"
+  loop:
+  - chisel_darwin_386
+  - chisel_darwin_amd64
+  - chisel_linux_386
+  - chisel_linux_amd64
+  - chisel_linux_arm
+  - chisel_windows_386.exe
+  - chisel_windows_amd64.exe
+
 - name: Unzip chisel binaries on host
   command: "{{'gunzip /opt/chisel/' + item + '.gz'}}"
   loop:
