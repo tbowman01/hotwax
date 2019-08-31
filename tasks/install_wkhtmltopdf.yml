@@ -1,0 +1,6 @@
+---
+# https://github.com/wkhtmltopdf/wkhtmltopdf
+- name: "Install wkhtmltopdf dependencies"
+  apt:
+    name: wkhtmltopdf
+    state: present   
