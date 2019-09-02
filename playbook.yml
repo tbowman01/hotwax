@@ -44,4 +44,6 @@
   - include_tasks: tasks/install_webshell.yml
   - include_tasks: tasks/install_wkhtmltopdf.yml
 
+  - include_tasks: tasks/update_polenum.yml
+
   - include_tasks: tasks/add_aliases.yml
