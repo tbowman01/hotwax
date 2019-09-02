@@ -5,18 +5,22 @@
     repo: "https://github.com/rofl0r/proxychains-ng.git"
     dest: /opt/proxychains-ng
     update: yes
+  register: proxychains
 
 - name: Configure proxychains-ng
   command: "./configure"
   args:
     chdir: /opt/proxychains-ng/
+  when: proxychains.changed
 
 - name: Compile proxychains-ng
   command: "make"
   args:
     chdir: /opt/proxychains-ng/
+  when: proxychains.changed
 
 - name: Install proxychains-ng
   command: "make install"
   args:
     chdir: /opt/proxychains-ng/
+  when: proxychains.changed
