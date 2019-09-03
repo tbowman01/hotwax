@@ -45,5 +45,5 @@
   - include_tasks: tasks/install_wkhtmltopdf.yml
 
   - include_tasks: tasks/update_polenum.yml
-
+  - include_tasks: tasks/install_custom_samba.yml
   - include_tasks: tasks/add_aliases.yml
