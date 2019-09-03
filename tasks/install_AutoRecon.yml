@@ -5,11 +5,26 @@
     repo: "https://github.com/Tib3rius/AutoRecon.git"
     dest: /opt/autorecon
     update: yes
+    force: yes
 
 - name: Install autorecon
   pip: 
     executable: pip3
     requirements: /opt/autorecon/requirements.txt
+
+- name: Change default scan name to gobuster (v3)
+  lineinfile:
+    path: /opt/autorecon/config/service-scans.toml
+    regexp: '^    name = ''dirb'''
+    insertafter: '^    \[\[http\.scan\]\]'
+    line: '    name = ''gobuster'''
+
+- name: Change default scan command to gobuster (v3)
+  lineinfile:
+    path: /opt/autorecon/config/service-scans.toml
+    regexp: '^     command = ''dirb {scheme}'
+    insertafter: '^    \[\[http\.scan\]\]'
+    line: '    command = ''gobuster dir -u {scheme}://{address}:{port}/ /usr/share/seclists/Discovery/Web-Content/common.txt -t 20 -z -k -q -o "{scandir}/{protocol}_{port}_{scheme}_gobuster.txt"'''
 
 - name: Set autorecon aliases
   set_fact:
