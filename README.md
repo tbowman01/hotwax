@@ -14,6 +14,7 @@ These instructions will get you a copy of the project up and running on your loc
 * Ansible
 
 ```
+apt update -y
 apt install -y git ansible
 ```
 
@@ -32,7 +33,7 @@ Run the playbook
 cd hotwax
 ansible-playbook playbook.yml
 ```
-- []() -
+
 ## Tools updated:
  - [Samba 4.10.8 (smbclient,rpcclient,nmblookup](https://github.com/samba-team/samba) - Patched to fix issues with polenum, enum4linux, and restoring smbclient connection output.
  - [enum4linux](https://github.com/portcullislabs/enum4linux) - Fix minor parsing issues. Updates temporarily included by BrashEndeavours fork, until PR is merged.
