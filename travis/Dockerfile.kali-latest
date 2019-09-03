@@ -1,7 +1,5 @@
 FROM kalilinux/kali-linux-docker:latest
 
-ENV ANSIBLE_VAULT_PASSWORD_FILE /root/hotwax/.vault_env
-
 RUN apt-get update && apt-get dist-upgrade -y
 
 RUN apt-get update && apt-get install -y \
