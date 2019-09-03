@@ -6,8 +6,6 @@
 
   vars_files:
     - default.config.yml
-    # Remove if not using secrets to store private keys.
-    - secrets/ssh_keys.yml      
 
   pre_tasks:
     - include_vars: "{{ item }}"
@@ -17,15 +15,8 @@
 
   tasks:
   - include_tasks: tasks/user.yml
-        
-  - include_tasks: tasks/dotfiles.yml
-    when: configure_dotfiles
 
   - include_tasks: tasks/python_virtualenv.yml
-    when: configure_virtualenv
-
-  - include_tasks: tasks/ssh_keys.yml
-    when: configure_keys
 
   - include_tasks: tasks/install_git.yml
 

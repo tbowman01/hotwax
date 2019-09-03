@@ -8,21 +8,6 @@ bash_aliases: []
 configure_bootstrap: yes
 configure_virtualenv: yes
 
-#Change to no, if you aren't installing private keys (and remove secrets/ssh_keys.yml)
-configure_keys: yes
-
-#Change to your own dotfiles repo
-configure_dotfiles: yes
-dotfiles_repo: https://github.com/BrashEndeavours/dotfiles
-dotfiles_repo_accept_hostkey: yes
-dotfiles_repo_local_destination: /root/Documents/dotfiles
-dotfiles_files:
-  - .bashrc
-  - .gitconfig
-  - .vimrc
-  - .config/cherrytree/config.cfg
-  - .tmux.conf
-
 python_versions: [2.7, 3.7]
 python_virtualenvs: 
 - path: /root/venv/py2
