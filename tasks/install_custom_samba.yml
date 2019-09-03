@@ -16,67 +16,99 @@
 
 - name: Download samba
   get_url:
-    url: https://github.com/samba-team/samba/archive/samba-4.5.16.tar.gz
+    url: https://github.com/samba-team/samba/archive/samba-4.10.8.tar.gz
     validate_certs: no
-    dest: /root/Downloads/samba-4.5.16.tar.gz
+    dest: /root/Downloads/samba-4.10.8.tar.gz
     mode: 333
     owner: root
   register: samba_download
 
 - name: Remove old samba build
-  command: rm -rf samba-4.5.16
+  command: rm -rf samba-4.10.8
   args:
     chdir: /root/Downloads
-    removes: /root/Downloads/samba-4.5.16/
+    removes: /root/Downloads/samba-4.10.8/
   when: samba_download.changed
 
-- name: Extract Samba 4.5.16.tar.gz
-  command: tar xzvf samba-4.5.16.tar.gz
+- name: Extract samba-4.10.8.tar.gz
+  command: tar xzvf samba-4.10.8.tar.gz
   args:
     chdir: /root/Downloads
-    creates: /root/Downloads/samba-4.5.16/
+    creates: /root/Downloads/samba-4.10.8/
   when: samba_download.changed
 
-- name: Move Samba 4.5.16.tar.gz
-  command: mv samba-samba-4.5.16 samba-4.5.16
+- name: Move Samba 4.10.8.tar.gz
+  command: mv samba-samba-4.10.8 samba-4.10.8
   args:
     chdir: /root/Downloads
-    creates: /root/Downloads/samba-4.5.16/
+    creates: /root/Downloads/samba-4.10.8/
   when: samba_download.changed
 
-- name: Download patch for Samba 4.5.16.tar.gz
+- name: Download client.c patch for samba-4.10.8
   get_url: 
-    url: https://raw.githubusercontent.com/BrashEndeavours/samba/master/samba-4.5.16.patch
+    url: https://raw.githubusercontent.com/BrashEndeavours/samba/master/samba-4.10.8.client_c.patch
     validate_certs: no
-    dest: /root/Downloads/samba-4.5.16/
+    dest: /root/Downloads/samba-4.10.8/
     mode: 333
     owner: root
   when: samba_download.changed
 
-- name: Apply patch for Samba 4.5.16
-  command: patch source3/client/client.c samba-4.5.16.patch
+- name: Apply clientc patch for samba-4.10.8
+  command: patch source3/client/client.c samba-4.10.8.client_c.patch
   args:
-    chdir: /root/Downloads/samba-4.5.16/
+    chdir: /root/Downloads/samba-4.10.8/
   when: samba_download.changed
 
-- name: Configure Samba 4.5.16
-  command: ./configure --prefix=/usr/local --exec-prefix=/usr/local --sysconfdir=/etc --enable-fhs --localstatedir=/var --with-piddir=/run/samba --enable-selftest
-  args:
-    chdir: /root/Downloads/samba-4.5.16/
+- name: Download clidfs.c patch for samba-4.10.8
+  get_url: 
+    url: https://raw.githubusercontent.com/BrashEndeavours/samba/master/samba-4.10.8.clidfs_c.patch
+    validate_certs: no
+    dest: /root/Downloads/samba-4.10.8/
+    mode: 333
+    owner: root
   when: samba_download.changed
 
-- name: Make Samba 4.5.15
+- name: Apply clidfs.c for samba-4.10.8
+  command: patch source3/libsmb/clidfs.c samba-4.10.8.clidfs_c.patch
+  args:
+    chdir: /root/Downloads/samba-4.10.8/
+  when: samba_download.changed
+
+- name: Configure samba-4.10.8
+  command: ./configure --prefix=/usr/local --exec-prefix=/usr/local --sysconfdir=/etc --enable-fhs --localstatedir=/var --with-piddir=/run/samba
+  args:
+    chdir: /root/Downloads/samba-4.10.8/
+  when: samba_download.changed
+
+- name: Make samba-4.10.8
   command: make
   args:
-    chdir: /root/Downloads/samba-4.5.16/
-  register: samba_make_result
-  success_when: 'finished successfully' in samba_make_result.stdout
+    chdir: /root/Downloads/samba-4.10.8/
   when: samba_download.changed
 
-- name: Install Samba 4.5.16
+- name: Install samba-4.10.8
   command: make install
   args:
-    chdir: /root/Downloads/samba-4.5.16/
-  register: samba_install_result
-  success_when: 'finished successfully' in samba_install_result.stdout
+    chdir: /root/Downloads/samba-4.10.8/
   when: samba_download.changed
+
+- name: Alter /etc/samba/smb.conf (spnego)
+  lineinfile:
+    path: /etc/samba/smb.conf
+    regexp: '^\s*?client use spnego'
+    insertafter: '^\[global\]'
+    line: '   client use spnego = No'
+
+- name: Alter /etc/samba/smb.conf (client min protocol)
+  lineinfile:
+    path: /etc/samba/smb.conf
+    regexp: '^\s*?client min protocol'
+    insertafter: '^\[global\]'
+    line: '   client min protocol = NT1'
+
+- name: Alter /etc/samba/smb.conf (client max protocol)
+  lineinfile:
+    path: /etc/samba/smb.conf
+    regexp: '^\s*?client max protocol'
+    insertafter: '^\[global\]'
+    line: '   client max protocol = SMB3_11'
