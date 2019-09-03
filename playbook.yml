@@ -6,7 +6,8 @@
 
   vars_files:
     - default.config.yml
-    - secrets/ssh_keys.yml
+    # Remove if not using secrets to store private keys.
+    - secrets/ssh_keys.yml      
 
   pre_tasks:
     - include_vars: "{{ item }}"
