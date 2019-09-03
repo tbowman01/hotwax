@@ -9,7 +9,7 @@
 
 - name: Download chisel archives from repository
   get_url:
-    url: "{{'https://github.com/jpillora/chisel/releases/download/' + chisel_version + '/' + item + '.gz'}}"
+    url: "{{'https://github.com/jpillora/chisel/releases/download/1.3.1/' + item + '.gz'}}"
     validate_certs: no
     dest: "/opt/chisel/"
     mode: "555"
@@ -25,7 +25,9 @@
   register: chisel
 
 - name: Remove previous chisel binaries
-  command: "{{'rm /opt/chisel/' + item}}"
+  file: 
+    path: "{{'/opt/chisel/' + item}}"
+    state: absent
   loop:
   - chisel_darwin_386
   - chisel_darwin_amd64
