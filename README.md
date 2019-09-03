@@ -14,6 +14,7 @@ These instructions will get you a copy of the project up and running on your loc
 * Ansible
 
 ```
+apt update -y
 apt install -y git ansible
 ```
 
@@ -33,18 +34,26 @@ cd hotwax
 ansible-playbook playbook.yml
 ```
 
-## Tools installed:
+## Tools updated:
+ - [Samba 4.10.8 (smbclient,rpcclient,nmblookup](https://github.com/samba-team/samba) - Patched to fix issues with polenum, enum4linux, and restoring smbclient connection output.
+ - [enum4linux](https://github.com/portcullislabs/enum4linux) - Fix minor parsing issues. Updates temporarily included by BrashEndeavours fork, until PR is merged.
 
+## Tools installed:
+ - [AutoRecon](https://github.com/Tib3rius/AutoRecon) - AutoRecon is a multi-threaded network reconnaissance tool which performs automated enumeration of services.
+ - [chisel](https://github.com/jpillora/chisel) - A fast TCP tunnel over HTTP
+ - [gobuster](https://github.com/OJ/gobuster) - Directory/File, DNS and VHost busting tool written in Go
  - [LinEnum](https://github.com/rebootuser/LinEnum) - Local Linux Enumeration & Privilege Escalation Script 
+ - [nishang](https://github.com/samratashok/nishang) - Framework and collection of scripts and payloads which enables usage of PowerShell for penetration testing.
  - [One-Lin3r](https://github.com/D4Vinci/One-Lin3r) - On demand one-liners that aid in penetration testing operations, privilege escalation and more
  - [PowerSploit](https://github.com/PowerShellMafia/PowerSploit) - Collection of Microsoft PowerShell modules that can be used to aid penetration testers during all phases of an assessment.
- - [SecLists](https://github.com/danielmiessler/SecLists) - Collection of usernames, passwords, URLs, sensitive data patterns, fuzzing payloads, web shells, and more.
- - [nishang](https://github.com/samratashok/nishang) - Framework and collection of scripts and payloads which enables usage of PowerShell for penetration testing.
+ - [proxychains-ng](https://github.com/rofl0r/proxychains-ng) - proxychains ng (new generation) - a preloader which hooks calls to sockets in dynamically linked programs and redirects it through one or more socks/http proxies. continuation of the unmaintained proxychains project.
  - [pspy](https://github.com/DominicBreuker/pspy) - Monitor linux processes without root permissions.
+ - [SecLists](https://github.com/danielmiessler/SecLists) - Collection of usernames, passwords, URLs, sensitive data patterns, fuzzing payloads, web shells, and more.
  - [sherlock](https://github.com/sherlock-project/sherlock) - Find usernames across social networks.
- - [AutoRecon](https://github.com/Tib3rius/AutoRecon) - AutoRecon is a multi-threaded network reconnaissance tool which performs automated enumeration of services.
-- [Windows PHP Reverse Shell](https://github.com/Dhayalanb/windows-php-reverse-shell) - Simple php reverse shell implemented using binary , based on an webshell .
-- [OSCP Exam Report Template](https://github.com/whoisflynn/OSCP-Exam-Report-Template) - Modified template for the OSCP Exam
+ - [sshuttle](https://github.com/sshuttle/sshuttle) - Transparent proxy server that works as a poor man's VPN. Forwards over ssh. Doesn't require admin. Works with Linux and MacOS. Supports DNS tunneling.
+ - [webshell](https://github.com/tennc/webshell) - This is a webshell open source project.
+ - [Windows PHP Reverse Shell](https://github.com/Dhayalanb/windows-php-reverse-shell) - Simple php reverse shell implemented using binary, based on an webshell.
+ - [OSCP Exam Report Template](https://github.com/whoisflynn/OSCP-Exam-Report-Template) - Modified template for the OSCP Exam
 
 ## Contributing
 
@@ -72,6 +81,12 @@ Please read [CONTRIBUTING.md](https://github.com/BrashEndeavours/hotwax/blob/mas
 * **Tib3rius** - [AutoRecon](https://github.com/Tib3rius/AutoRecon)
 * **Dhayalanb** - [Windows PHP Reverse Shell](https://github.com/Dhayalanb/windows-php-reverse-shell)
 * **whoisflynn** - [OSCP Exam Report Template](https://github.com/whoisflynn/OSCP-Exam-Report-Template)
+* **jpillora** - [chisel](https://github.com/jpillora/chisel)
+* **OJ Reeves** - [gobuster](https://github.com/OJ/gobuster)
+* **rofl0r** - [proxychains-ng](https://github.com/rofl0r/proxychains-ng)
+* **Brian May** - [sshuttle](https://github.com/sshuttle/sshuttle)
+* **tennc** - [webshell](https://github.com/tennc/webshell)
+* **PortcullisLabs** - [enum4linux](https://github.com/portcullislabs/enum4linux)
 
 ## License
 
