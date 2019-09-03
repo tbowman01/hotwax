@@ -19,7 +19,7 @@ apt install -y git ansible
 
 ### Installing
 
-Clone the HOTWAX repository, including submodules.
+Clone the HOTWAX repository.
 
 ```
 cd ~
