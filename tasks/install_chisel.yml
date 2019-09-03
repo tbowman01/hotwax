@@ -7,7 +7,7 @@
     mode: "755"
     owner: "root"
 
-- name: Download chisel binaries from repository
+- name: Download chisel archives from repository
   get_url:
     url: "{{'https://github.com/jpillora/chisel/releases/download/' + chisel_version + '/' + item + '.gz'}}"
     validate_certs: no
@@ -22,6 +22,7 @@
   - chisel_linux_arm
   - chisel_windows_386.exe
   - chisel_windows_amd64.exe
+  register: chisel
 
 - name: Remove previous chisel binaries
   command: "{{'rm /opt/chisel/' + item}}"
@@ -33,9 +34,10 @@
   - chisel_linux_arm
   - chisel_windows_386.exe
   - chisel_windows_amd64.exe
+  when: chisel.changed
 
 - name: Unzip chisel binaries on host
-  command: "{{'gunzip /opt/chisel/' + item + '.gz'}}"
+  command: "{{'gunzip --keep /opt/chisel/' + item + '.gz'}}"
   loop:
   - chisel_darwin_386
   - chisel_darwin_amd64
@@ -44,3 +46,4 @@
   - chisel_linux_arm
   - chisel_windows_386.exe
   - chisel_windows_amd64.exe
+  when: chisel.changed
