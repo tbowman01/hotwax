@@ -3,7 +3,7 @@
 - name: Copy AutoRecon from repository
   git:
     #Temporary, until PR for gobuster v3 is brought into main repo.
-    repo: "https://github.com/finalriposte/AutoRecon"
+    repo: "https://github.com/BrashEndeavours/AutoRecon"
     dest: /opt/autorecon
     update: yes 
     force: yes
