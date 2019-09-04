@@ -29,6 +29,7 @@
   - include_tasks: tasks/install_OSCP_report_templates.yml
   - include_tasks: tasks/install_pspy.yml
   - include_tasks: tasks/install_PowerSploit.yml
+  - include_tasks: tasks/install_powerless.yml
   - include_tasks: tasks/install_proxychains-ng.yml
   - include_tasks: tasks/install_SecLists.yml
   - include_tasks: tasks/install_sherlock.yml

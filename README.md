@@ -45,6 +45,7 @@ ansible-playbook playbook.yml
  - [LinEnum](https://github.com/rebootuser/LinEnum) - Local Linux Enumeration & Privilege Escalation Script 
  - [nishang](https://github.com/samratashok/nishang) - Framework and collection of scripts and payloads which enables usage of PowerShell for penetration testing.
  - [One-Lin3r](https://github.com/D4Vinci/One-Lin3r) - On demand one-liners that aid in penetration testing operations, privilege escalation and more
+ - [Powerless](https://github.com/M4ximuss/Powerless) - A Windows privilege escalation (enumeration) script designed with OSCP labs (i.e. legacy Windows machines without Powershell) in mind.
  - [PowerSploit](https://github.com/PowerShellMafia/PowerSploit) - Collection of Microsoft PowerShell modules that can be used to aid penetration testers during all phases of an assessment.
  - [proxychains-ng](https://github.com/rofl0r/proxychains-ng) - proxychains ng (new generation) - a preloader which hooks calls to sockets in dynamically linked programs and redirects it through one or more socks/http proxies. continuation of the unmaintained proxychains project.
  - [pspy](https://github.com/DominicBreuker/pspy) - Monitor linux processes without root permissions.
@@ -87,6 +88,7 @@ Please read [CONTRIBUTING.md](https://github.com/BrashEndeavours/hotwax/blob/mas
 * **Brian May** - [sshuttle](https://github.com/sshuttle/sshuttle)
 * **tennc** - [webshell](https://github.com/tennc/webshell)
 * **PortcullisLabs** - [enum4linux](https://github.com/portcullislabs/enum4linux)
+* **M4ximuss** - [Powerless](https://github.com/M4ximuss/Powerless)
 
 ## License
 

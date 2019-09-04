@@ -1,0 +1,16 @@
+---
+# https://github.com/M4ximuss/Powerless
+- name: Clone powerless from repository
+  git:
+    repo: "https://github.com/M4ximuss/Powerless.git"
+    dest: /opt/powerless
+    update: yes
+
+- name: Download archived accesschk.exe
+  get_url:
+    url: https://web.archive.org/web/20080530012252/http://live.sysinternals.com/accesschk.exe
+    validate_certs: no
+    dest: /opt/powerless/accesschk.exe
+    mode: 555
+    owner: root
+
