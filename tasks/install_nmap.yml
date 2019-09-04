@@ -1,0 +1,26 @@
+---
+- name: Download nmap
+  git:
+    repo: "https://github.com/nmap/nmap.git"
+    dest: /root/Downloads/nmap_src
+    update: yes
+    force: yes
+  register: nmap_download
+
+- name: Configure NMap
+  command: ./configure
+  args:
+    chdir: /root/Downloads/nmap_src/
+  when: nmap_download.changed
+
+- name: Make NMap
+  command: make -j4
+  args:
+    chdir: /root/Downloads/nmap_src/
+  when: nmap_download.changed
+
+- name: Install NMap
+  command: make -j4 install
+  args:
+    chdir: /root/Downloads/nmap_src/
+  when: nmap_download.changed
