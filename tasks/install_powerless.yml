@@ -6,11 +6,18 @@
     dest: /opt/powerless
     update: yes
 
-- name: Download archived accesschk.exe
+- name: Download archived accesschk-2003-xp.exe
   get_url:
-    url: https://web.archive.org/web/20080530012252/http://live.sysinternals.com/accesschk.exe
+    url: https://github.com/ankh2054/windows-pentest/blob/master/Privelege/accesschk-2003-xp.exe
     validate_certs: no
-    dest: /opt/powerless/accesschk.exe
+    dest: /opt/powerless/
     mode: 555
     owner: root
 
+- name: Download archived accesschk-2008-vista.exe
+  get_url:
+    url: https://github.com/ankh2054/windows-pentest/blob/master/Privelege/accesschk-2008-vista.exe
+    validate_certs: no
+    dest: /opt/powerless/
+    mode: 555
+    owner: root
