@@ -36,13 +36,13 @@
   when: samba_download.changed
 
 - name: Extract samba-4.10.8.tar.gz
-  command: tar xzvf samba-4.10.8.tar.gz
+  command: tar xzvf samba-samba-4.10.8.tar.gz
   args:
     chdir: /root/Downloads
-    creates: /root/Downloads/samba-4.10.8/
+    creates: /root/Downloads/samba-samba-4.10.8/
   when: samba_download.changed
 
-- name: Move Samba 4.10.8.tar.gz
+- name: Move Samba 4.10.8
   command: mv samba-samba-4.10.8 samba-4.10.8
   args:
     chdir: /root/Downloads

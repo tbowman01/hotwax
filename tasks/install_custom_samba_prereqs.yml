@@ -73,6 +73,7 @@
     - libkdc2-heimdal
     - libkrb5-26-heimdal
     - libldap2-dev
+    - libldb-dev
     - liblmdb-dev
     - liblttng-ust-dev
     - libmd-dev
