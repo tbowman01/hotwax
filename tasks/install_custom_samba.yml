@@ -11,11 +11,19 @@
 # Anyway, you can fix this by downloading and compiling an older version of samba:
 # https://github.com/samba-team/samba/archive/samba-4.5.16.tar.gz
 
+- name: Ensure downloads directory exists (Required by travis)
+  file:
+    path: /root/Downloads
+    state: directory
+    mode: '0755'
+    owner: root
+    group: root
+
 - name: Download samba
   get_url:
     url: https://github.com/samba-team/samba/archive/samba-4.10.8.tar.gz
     validate_certs: no
-    dest: /root/Downloads/samba-4.10.8.tar.gz
+    dest: /root/Downloads/
     mode: 333
     owner: root
   register: samba_download
