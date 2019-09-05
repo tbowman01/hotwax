@@ -117,3 +117,12 @@
     regexp: '^\s*?client max protocol'
     insertafter: '^\[global\]'
     line: '   client max protocol = SMB3_11'
+
+- name: Remove /etc/ld.so.conf.d/libc.conf for pth-* compat
+  file:
+    path: /etc/ld.so.conf.d/libc.conf
+    state: absent
+
+- name: Rebuild library cache ldconfig
+  command: ldconfig
+    
