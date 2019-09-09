@@ -70,3 +70,6 @@
     line: /usr/local/lib
     insertafter: EOF
     state: present
+
+- name: Rebuild library cache ldconfig
+  command: ldconfig
