@@ -4,7 +4,6 @@
     repo: "https://github.com/nmap/nmap.git"
     dest: /root/Downloads/nmap_src
     update: yes
-    force: yes
   register: nmap_download
 
 - name: Configure NMap
