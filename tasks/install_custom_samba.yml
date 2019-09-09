@@ -23,9 +23,9 @@
   get_url:
     url: https://github.com/samba-team/samba/archive/samba-4.10.8.tar.gz
     validate_certs: no
-    dest: /root/Downloads/
+    dest: /root/Downloads/samba-samba-4.10.8.tar.gz
     mode: 333
-    force: yes
+    force: no
     owner: root
   register: samba_download
 
