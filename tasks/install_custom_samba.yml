@@ -25,6 +25,7 @@
     validate_certs: no
     dest: /root/Downloads/
     mode: 333
+    force: yes
     owner: root
   register: samba_download
 

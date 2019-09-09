@@ -1,0 +1,72 @@
+---
+# https://github.com/hugsy/gef
+- name: Install packages (GEF pre-req)
+  apt: 
+    name: 
+    - cmake
+    - gcc
+    - g++
+    - pkg-config
+    - libglib2.0-dev
+    state: latest
+
+- name: Download config script for capstone, keystone, unicorn
+  get_url:
+    url: https://raw.githubusercontent.com/hugsy/stuff/master/update-trinity.sh
+    dest: /root/Downloads/
+    force: yes
+    mode: 777
+    owner: root
+  register: gef_config
+
+- name: Run config/install script for capstone, keystone, unicorn
+  command: ./update-trinity.sh
+  args:
+    chdir: /root/Downloads
+  when: gef_config.changed
+
+- name: Install Python 2 packages
+  pip: 
+    name: 
+    - keystone-engine
+    - unicorn
+    - ropper
+    executable: pip2
+    state: latest
+
+- name: Install Python 3 packages
+  pip: 
+    name: 
+    - keystone-engine
+    - unicorn
+    - ropper
+    executable: pip3
+    state: latest
+
+- name: Copy GEF from repository
+  get_url:
+    url: https://github.com/hugsy/gef/raw/master/gef.py 
+    dest: /root/.gdbinit-gef.py
+    force: yes
+    mode: 644
+    owner: root
+
+- name: Touch a file, using symbolic modes to set the permissions (equivalent to 0644)
+  file:
+    path: /root/.gdbinit
+    state: touch
+    mode: 644
+    owner: root
+
+- name: Add GEF to gdbinit
+  lineinfile:
+    path: /root/.gdbinit
+    line: 'source ~/.gdbinit-gef.py'
+    state: present
+
+- name: Add /usr/local/lib to /etc/ld.so.conf
+  lineinfile:
+    path: /etc/ld.so.conf
+    line: /usr/local/lib
+    insertafter: EOF
+    state: present
