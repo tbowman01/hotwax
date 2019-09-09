@@ -1,0 +1,7 @@
+---
+- name: Install pwntools under Python 2 (pip2)
+  pip: 
+    name: 
+    - pwntools
+    executable: pip2
+    state: latest

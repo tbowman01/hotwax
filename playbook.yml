@@ -37,7 +37,7 @@
   - include_tasks: tasks/install_webshell.yml
   - include_tasks: tasks/install_wkhtmltopdf.yml
   - include_tasks: tasks/install_GEF.yml
-
+  - include_tasks: tasks/install_pwntools.yml
   - include_tasks: tasks/update_polenum.yml
 
   - include_tasks: tasks/install_custom_samba_prereqs.yml
