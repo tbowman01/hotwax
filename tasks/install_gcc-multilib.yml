@@ -1,0 +1,5 @@
+---
+- name: Ensure gcc-multilib is installed (Kali).
+  apt:
+    name: "gcc-multilib"
+    state: present
