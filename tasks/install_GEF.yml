@@ -10,6 +10,14 @@
     - libglib2.0-dev
     state: latest
 
+- name: Ensure downloads directory exists (Required by travis)
+  file:
+    path: /root/Downloads
+    state: directory
+    mode: '0755'
+    owner: root
+    group: root
+
 - name: Download config script for capstone, keystone, unicorn
   get_url:
     url: https://raw.githubusercontent.com/hugsy/stuff/master/update-trinity.sh
