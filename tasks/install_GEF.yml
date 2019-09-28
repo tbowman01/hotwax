@@ -19,6 +19,14 @@
     owner: root
   register: gef_config
 
+- name: Ensure downloads directory exists (Required by travis)
+  file:
+    path: /root/Downloads
+    state: directory
+    mode: '0755'
+    owner: root
+    group: root
+
 - name: Run config/install script for capstone, keystone, unicorn
   command: ./update-trinity.sh
   args:

@@ -1,4 +1,12 @@
 ---
+- name: Ensure downloads directory exists (Required by travis)
+  file:
+    path: /root/Downloads
+    state: directory
+    mode: '0755'
+    owner: root
+    group: root
+
 - name: Download nmap
   git:
     repo: "https://github.com/nmap/nmap.git"
