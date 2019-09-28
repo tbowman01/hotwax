@@ -32,6 +32,7 @@
   - include_tasks: tasks/install_PowerSploit.yml
   - include_tasks: tasks/install_powerless.yml
   - include_tasks: tasks/install_proxychains-ng.yml
+  - include_tasks: tasks/install_payloadsallthethings.yml
   - include_tasks: tasks/install_SecLists.yml
   - include_tasks: tasks/install_sherlock.yml
   - include_tasks: tasks/install_sshuttle.yml

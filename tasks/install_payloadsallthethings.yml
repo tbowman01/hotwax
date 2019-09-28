@@ -1,0 +1,7 @@
+---
+# https://github.com/swisskyrepo/PayloadsAllTheThings
+- name: Copy the PayloadsAllTheThings from repository
+  git:
+    repo: "https://github.com/swisskyrepo/PayloadsAllTheThings.git"
+    dest: /opt/PayloadsAllTheThings
+    update: yes
