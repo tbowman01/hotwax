@@ -126,7 +126,6 @@
     - python3-markdown
     - python3-matplotlib
     - python3-pexpect
-    - python3-talloc-dev
     - rsync
     - sed
     - sudo
