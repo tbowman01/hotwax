@@ -1,8 +1,11 @@
 ---
 # https://github.com/Hackplayers/evil-winrm
-- name: Install gem
+- name: Install rubygems and ruby-dev
   apt:
-    name: rubygems
+    name: "{{item}}"
+  loop:
+  - rubygems
+  - ruby-dev
 
 - name: Install gem packages
   gem:
