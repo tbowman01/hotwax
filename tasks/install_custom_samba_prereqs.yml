@@ -115,7 +115,6 @@
     - python-iso8601
     - python-markdown
     - python-pexpect
-    - python-talloc-dev
     - python3
     - python3-crypto
     - python3-dbg
