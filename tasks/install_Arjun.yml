@@ -1,0 +1,18 @@
+---
+# https://github.com/s0md3v/Arjun
+- name: Copy Arjun from repository
+  git:
+    #Temporary, until PR for gobuster v3 is brought into main repo.
+    repo: "https://github.com/s0md3v/Arjun"
+    dest: /opt/arjun
+    update: yes 
+    force: yes
+
+- name: Set Arjun aliases
+  set_fact:
+    arjun_aliases: 
+    - { alias: 'arjun', command: 'python3 /opt/arjun/arjun.py' }
+
+- name: Merge Arjun aliases
+  set_fact:
+    bash_aliases: "{{ bash_aliases + arjun_aliases }}"

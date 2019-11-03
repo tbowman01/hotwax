@@ -21,6 +21,7 @@
   - include_tasks: tasks/install_git.yml
 
   - include_tasks: tasks/install_AutoRecon.yml
+  - include_tasks: tasks/install_Arjun.yml
   - include_tasks: tasks/install_chisel.yml
   - include_tasks: tasks/install_evil-winrm.yml
   - include_tasks: tasks/install_gobuster.yml

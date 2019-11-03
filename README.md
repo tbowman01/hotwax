@@ -39,6 +39,7 @@ ansible-playbook playbook.yml
  - [enum4linux](https://github.com/portcullislabs/enum4linux) - Fix minor parsing issues. Updates temporarily included by BrashEndeavours fork, until PR is merged.
 
 ## Tools installed:
+ - [Arjun](https://github.com/s0md3v/Arjun) - Arjun is an HTTP parameter discovery suite.
  - [AutoRecon](https://github.com/Tib3rius/AutoRecon) - AutoRecon is a multi-threaded network reconnaissance tool which performs automated enumeration of services.
  - [chisel](https://github.com/jpillora/chisel) - A fast TCP tunnel over HTTP
  - [evil-winrm](https://github.com/Hackplayers/evil-winrm) - The ultimate WinRM shell for hacking/pentesting.
@@ -91,6 +92,7 @@ Please read [CONTRIBUTING.md](https://github.com/BrashEndeavours/hotwax/blob/mas
 * **tennc** - [webshell](https://github.com/tennc/webshell)
 * **PortcullisLabs** - [enum4linux](https://github.com/portcullislabs/enum4linux)
 * **M4ximuss** - [Powerless](https://github.com/M4ximuss/Powerless)
+* **Somdev Sangwan** - [Arjun](https://github.com/s0md3v/Arjun)
 
 ## License
 
