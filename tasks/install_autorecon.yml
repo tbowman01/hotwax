@@ -4,11 +4,10 @@
   apt:
     name: "git"
     state: present
-    
+
 - name: Copy AutoRecon from repository
   git:
-    #Temporary, until PR for gobuster v3 is brought into main repo.
-    repo: "https://github.com/BrashEndeavours/AutoRecon"
+    repo: https://github.com/Tib3rius/AutoRecon
     dest: /opt/autorecon
     update: yes 
     force: yes
@@ -26,3 +25,37 @@
 - name: Merge autorecon aliases
   set_fact:
     bash_aliases: "{{ bash_aliases + autorecon_aliases }}"
+
+- name: Remove the SNMP configuration.
+  replace:
+    path: /opt/autorecon/config/service-scans.toml
+    after: '\[snmp\]'
+    before: '\[telnet\]'
+    regexp: '^(.+)$'
+    replace: ''
+
+- name: Add new SNMP configuration.
+  blockinfile:
+    path: /opt/autorecon/config/service-scans.toml      
+    insertafter: '\[snmp\]' 
+    block: |
+      
+      service-names = [
+        '^snmp'
+      ]
+
+          [[snmp.scan]]
+          name = 'nmap-snmp'
+          command = 'nmap {nmap_extra} -sV -p {port} --script="banner,(snmp* or ssl*) and not (brute or broadcast or dos or external or fuzzer)" -oN "{scandir}/{protocol}_{port}_snmp-nmap.txt" -oX "{scandir}/xml/{protocol}_{port}_snmp_nmap.xml" {address}'
+
+          [[snmp.scan]]
+          name = 'onesixtyone'
+          command = 'onesixtyone -c /usr/share/seclists/Discovery/SNMP/common-snmp-community-strings-onesixtyone.txt -dd {address} 2>&1 | tee "{scandir}/{protocol}_{port}_snmp_onesixtyone.txt"'
+          run_once = true
+          ports.udp = [161]
+
+          [[snmp.scan]]
+          name = 'snmp-check'
+          command = 'snmp-check -p 161 -c public -w {address} 2>&1 | tee "{scandir}/{protocol}_{port}_snmp-check.txt"'
+          run_once = true
+          ports.udp = [161] 
