@@ -43,8 +43,8 @@
   - include_tasks: tasks/install_wkhtmltopdf.yml
   - include_tasks: tasks/install_xsstrike.yml
   - include_tasks: tasks/install_gef.yml
+  - include_tasks: tasks/install_polenum.yml
   - include_tasks: tasks/install_pwntools.yml
-  - include_tasks: tasks/update_polenum.yml
 
 
   - include_tasks: tasks/install_nmap.yml
