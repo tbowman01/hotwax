@@ -8,7 +8,7 @@
     update: yes 
     force: yes
 
-- name: Install autorecon
+- name: Install AutoRecon
   pip: 
     executable: pip3
     requirements: /opt/autorecon/requirements.txt
