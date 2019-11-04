@@ -23,6 +23,7 @@
   - include_tasks: tasks/install_autorecon.yml
   - include_tasks: tasks/install_arjun.yml
   - include_tasks: tasks/install_chisel.yml
+  - include_tasks: tasks/install_custom_samba.yml
   - include_tasks: tasks/install_evil-winrm.yml
   - include_tasks: tasks/install_gobuster.yml
   - include_tasks: tasks/install_gcc-multilib.yml
@@ -45,8 +46,7 @@
   - include_tasks: tasks/install_pwntools.yml
   - include_tasks: tasks/update_polenum.yml
 
-  - include_tasks: tasks/install_custom_samba_prereqs.yml
-  - include_tasks: tasks/install_custom_samba.yml
+
   - include_tasks: tasks/install_nmap.yml
 
   - include_tasks: tasks/add_aliases.yml
