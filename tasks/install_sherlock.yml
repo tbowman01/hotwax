@@ -1,5 +1,10 @@
 ---
 # https://github.com/sherlock-project/sherlock
+- name: Ensure git is installed.
+  apt:
+    name: "git"
+    state: present
+
 - name: Copy sherlock from repository
   git:
     repo: "https://github.com/sherlock-project/sherlock.git"

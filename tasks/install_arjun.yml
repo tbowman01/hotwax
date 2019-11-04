@@ -1,5 +1,10 @@
 ---
 # https://github.com/s0md3v/Arjun
+- name: Ensure git is installed.
+  apt:
+    name: "git"
+    state: present
+
 - name: Copy Arjun from repository
   git:
     #Temporary, until PR for gobuster v3 is brought into main repo.
