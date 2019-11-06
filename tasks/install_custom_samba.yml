@@ -126,6 +126,7 @@
     - python3-matplotlib
     - python3-pexpect
     - rsync
+    - samba
     - sed
     - sudo
     - tar
