@@ -58,7 +58,7 @@ ansible-playbook playbook.yml
  - [webshell](https://github.com/tennc/webshell) - This is a webshell open source project.
  - [Windows PHP Reverse Shell](https://github.com/Dhayalanb/windows-php-reverse-shell) - Simple php reverse shell implemented using bina- https://github.com/ucki/zauberfeder, based on an webshell.
  - [XSStrike](https://github.com/s0md3v/XSStrike) - Advanced XSS scanner
- - [report template in LaTex](https://github.com/ucki/zauberfeder) - A LaTex reporting template.
+ - [zauberfeder](https://github.com/ucki/zauberfeder) - A LaTex reporting template.
 
 ## Contributing
 
@@ -94,6 +94,7 @@ Please read [CONTRIBUTING.md](https://github.com/BrashEndeavours/hotwax/blob/mas
 * **PortcullisLabs** - [enum4linux](https://github.com/portcullislabs/enum4linux)
 * **M4ximuss** - [Powerless](https://github.com/M4ximuss/Powerless)
 * **Somdev Sangwan** - [Arjun](https://github.com/s0md3v/Arjun)
+* **ucki** - [zauberfeder](https://github.com/ucki)
 
 ## License
 
