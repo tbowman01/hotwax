@@ -1,0 +1,12 @@
+---
+# https://github.com/ucki/zauberfeder
+- name: Ensure git is installed.
+  apt:
+    name: "git"
+    state: present
+
+- name: Copy zauberfeder OSCP LaTex report template from repository
+  git:
+    repo: "https://github.com/ucki/zauberfeder"
+    dest: "{{ homefolder + 'Documents/OSCP-zauberfeder' }}"
+    update: yes

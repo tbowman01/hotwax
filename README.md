@@ -47,6 +47,7 @@ ansible-playbook playbook.yml
  - [LinEnum](https://github.com/rebootuser/LinEnum) - Local Linux Enumeration & Privilege Escalation Script 
  - [nishang](https://github.com/samratashok/nishang) - Framework and collection of scripts and payloads which enables usage of PowerShell for penetration testing.
  - [One-Lin3r](https://github.com/D4Vinci/One-Lin3r) - On demand one-liners that aid in penetration testing operations, privilege escalation and more
+ - [OSCP Exam Report Template](https://github.com/whoisflynn/OSCP-Exam-Report-Template) - Modified template for the OSCP Exam
  - [Powerless](https://github.com/M4ximuss/Powerless) - A Windows privilege escalation (enumeration) script designed with OSCP labs (i.e. legacy Windows machines without Powershell) in mind.
  - [PowerSploit](https://github.com/PowerShellMafia/PowerSploit) - Collection of Microsoft PowerShell modules that can be used to aid penetration testers during all phases of an assessment.
  - [proxychains-ng](https://github.com/rofl0r/proxychains-ng) - proxychains ng (new generation) - a preloader which hooks calls to sockets in dynamically linked programs and redirects it through one or more socks/http proxies. continuation of the unmaintained proxychains project.
@@ -55,9 +56,9 @@ ansible-playbook playbook.yml
  - [sherlock](https://github.com/sherlock-project/sherlock) - Find usernames across social networks.
  - [sshuttle](https://github.com/sshuttle/sshuttle) - Transparent proxy server that works as a poor man's VPN. Forwards over ssh. Doesn't require admin. Works with Linux and MacOS. Supports DNS tunneling.
  - [webshell](https://github.com/tennc/webshell) - This is a webshell open source project.
- - [Windows PHP Reverse Shell](https://github.com/Dhayalanb/windows-php-reverse-shell) - Simple php reverse shell implemented using binary, based on an webshell.
+ - [Windows PHP Reverse Shell](https://github.com/Dhayalanb/windows-php-reverse-shell) - Simple php reverse shell implemented using bina- https://github.com/ucki/zauberfeder, based on an webshell.
  - [XSStrike](https://github.com/s0md3v/XSStrike) - Advanced XSS scanner
- - [OSCP Exam Report Template](https://github.com/whoisflynn/OSCP-Exam-Report-Template) - Modified template for the OSCP Exam
+ - [report template in LaTex](https://github.com/ucki/zauberfeder) - A LaTex reporting template.
 
 ## Contributing
 
