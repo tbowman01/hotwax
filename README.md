@@ -41,6 +41,7 @@ ansible-playbook playbook.yml
 ## Tools installed:
  - [Arjun](https://github.com/s0md3v/Arjun) - Arjun is an HTTP parameter discovery suite.
  - [AutoRecon](https://github.com/Tib3rius/AutoRecon) - AutoRecon is a multi-threaded network reconnaissance tool which performs automated enumeration of services.
+ - [BloodHound](https://github.com/BloodHoundAD/BloodHound) - Six Degrees of Domain Admin.
  - [chisel](https://github.com/jpillora/chisel) - A fast TCP tunnel over HTTP
  - [evil-winrm](https://github.com/Hackplayers/evil-winrm) - The ultimate WinRM shell for hacking/pentesting.
  - [gobuster](https://github.com/OJ/gobuster) - Directory/File, DNS and VHost busting tool written in Go
@@ -95,6 +96,7 @@ Please read [CONTRIBUTING.md](https://github.com/BrashEndeavours/hotwax/blob/mas
 * **M4ximuss** - [Powerless](https://github.com/M4ximuss/Powerless)
 * **Somdev Sangwan** - [Arjun](https://github.com/s0md3v/Arjun)
 * **ucki** - [zauberfeder](https://github.com/ucki)
+* **BloodHoundAD** - [BloodHound](https://github.com/BloodHoundAD)
 
 ## License
 

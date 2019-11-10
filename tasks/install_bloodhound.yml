@@ -1,0 +1,18 @@
+---
+# Install BloodHound binaries
+- name: Install bloodhound
+  apt:
+    name: bloodhound
+
+- name: Ensure git is installed.
+  apt:
+    name: "git"
+    state: present
+
+- name: Copy Evil-Winrm from repository
+  # https://github.com/BloodHoundAD/BloodHound
+  git:
+    repo: "https://github.com/BloodHoundAD/BloodHound"
+    dest: /opt/bloodhound
+    update: yes 
+    force: yes

@@ -20,6 +20,7 @@
 
   - include_tasks: tasks/install_autorecon.yml
   - include_tasks: tasks/install_arjun.yml
+  - include_tasks: tasks/install_bloodhound.yml
   - include_tasks: tasks/install_chisel.yml
   - include_tasks: tasks/install_custom_samba.yml
   - include_tasks: tasks/install_evil-winrm.yml
