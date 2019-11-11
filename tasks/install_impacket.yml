@@ -1,0 +1,22 @@
+---
+# https://github.com/SecureAuthCorp/impacket
+#- name: Install impacket
+#  pip: 
+#    name: 
+#    - impacket
+#    executable: pip3
+#    #virtualenv: "{{python_virtualenvs.1.path}}"
+#    state: latest
+
+- name: Install impacket
+  apt:
+    name: "{{ item }}"
+  loop:
+  - python3-impacket
+  - impacket-scripts
+
+- name: Install impacket example scripts
+  shell: for i in $(ls /usr/share/doc/python3-impacket/examples/ -1); do t=$(echo $i | cut -d'.' -f1); ln -rs /usr/share/impacket/script /usr/bin/impacket-${t}; done;
+  register: impacket
+  changed_when: "'File exists' not in impacket.stderr"
+  failed_when: "'File exists' not in impacket.stderr"
